@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base1::layout(~{::section})">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Contact</title>
+</head>
+<body>
+<section>
+    <div class="card me-2 ms-2">
+        <div class="card-body">
+            <h1 class="text-center">Update Contact</h1>
+            <div class="container-fluid mt-1">
+                <div class="row">
+                    <div class="col-md-10 offset-md-1">
+                        <form th:action="@{/user/updatecon}" method="post" enctype="multipart/form-data" th:object="${contact}">
+                            <input type="hidden" th:value="${contact.cid}" name="cid"/>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text"><i class="fas fa-plus"></i></span>
+                                <input type="text" class="form-control" th:field="*{name}" placeholder="Enter Your Name" required/>
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text"><i class="fa-solid fa-user"></i></span>
+                                <input type="text" class="form-control" th:field="*{secondname}" placeholder="Enter Your Second Name" required/>
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text"><i class="fa-solid fa-briefcase"></i></span>
+                                <input type="text" class="form-control" th:field="*{work}" placeholder="Enter Your Work" required/>
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text"><i class="fa-solid fa-envelope"></i></span>
+                                <input type="email" class="form-control" th:field="*{email}" placeholder="Enter Your Email" required/>
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text"><i class="fa-solid fa-phone"></i></span>
+                                <input type="text" class="form-control" th:field="*{phone}" placeholder="Enter Your Phone Number" required/>
+                            </div>
+                            <div class="input-group mb-3">
+                                <textarea class="form-control" th:field="*{description}" placeholder="Enter About Yourself" rows="10" required></textarea>
+                            </div>
+                            <div class="container text-center">
+                                <img th:src="@{'/image/' + ${contact.image}}"/>
+                                <p>Choose new pic </p>
+                            </div>
+                            <div class="input-group mb-3">
+                                <input type="file" class="form-control" name="imagefile" placeholder="Upload Image"/>
+                            </div>
+                            <div class="container text-center mt-3">
+                                <button type="submit" class="btn btn-outline-info">Save Contact</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

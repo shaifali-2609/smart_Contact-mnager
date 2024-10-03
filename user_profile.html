@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base1::layout(~{::section})">
+
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<section>
+<div class="container text-center"><img  style="width:200px;height:200px;" th:src="@{'/image/contact.png'}" class="mypic" />
+</div><br/>            
+ <div class="top"><marquee><h3  class="bg-warning text-center"style="padding: 3px;">********Hurry Upp!!Add Your Contact on Cloud........***********</h3></marquee></div>
+
+<h3>Donate us</h3><input id ="payment" type="text" class="form-control" placeholder="Enter amount here"> 
+<div class="d-grid gap-2">
+
+<button onclick="paymentstart()" class="btn btn-primary btn-block " type="submit">pay</button>
+</div></section>
+ 
+<script>
+        $(document).ready(() => {
+            $('.item').removeClass('active');
+            $('#home-link').addClass('active');
+        });
+    </script>
+</body>
+</html>

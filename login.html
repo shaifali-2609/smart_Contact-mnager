@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Login Page</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link href="https://getbootstrap.com/docs/4.0/examples/signin/signin.css" rel="stylesheet" integrity="sha384-oOE/3m0LUMPub4kaC09mrdEhIc+e3exm4xOGxAmuFXhBNF4hcg/6MiAXAf5p0P56" crossorigin="anonymous"/>
+</head>
+
+<body>
+    <section>
+        <div class="align-center ml-10">
+            <div class="container p-5 align-center">
+                <div class="row">
+                    <div class="col-md-6 offset-md-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="container text-center"><h1>Login here</h1></div>
+                                <form th:action="@{/log}" method="post">
+                                   
+                                        <div th:if="${param.error}" class="alert alert-danger">Invalid Username and password</div>
+                                       <div th:if="${param.change}" class="alert alert-success"></div><div th:text="${param.change}"></div>
+                                        <div th:if="${param.logout}" class="alert alert-success">You have been logged out</div>
+                                        <div class="mb-3"> <label for="exampleInputEmail1" class="form-label">Email address</label>
+                                        <input type="email" class="form-control" id="exampleInputEmail1" name="username" aria-describedby="emailHelp" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="exampleInputPassword1" class="form-label">Password</label>
+                                        <input type="password" class="form-control" id="exampleInputPassword1" name="password" required>
+                                    </div>
+                                    <div class="text-center"><button type="submit" class="btn btn-primary">Submit</button></div>
+                                    <div class="d-flex justify-content-between mt-3">
+                                        <a href="" class="text-info" th:href="@{/signup}">Sign Up</a>
+                                        <a href="" class="text-success" th:href="@{/forgot}">Forgot Password</a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

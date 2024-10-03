@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<section><div class="align-center ml-10">
+            <div class="container p-5 align-center">
+                <div class="row">
+                    <div class="col-md-6 offset-md-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="container  text-center"><h1> Verify OTP </h1></div>
+                                 <div class="container "th:if="${session.messge }"><div class="alert alert-danger" role="alert">
+ <th:block th:text="${session.messege}"></th:block>
+</div></div>
+                                
+                               <form th:action="@{/verifyotp}" method="post">
+                               
+                               <div class="alert alert-success text-center" role="alert">
+   <th:block th:text="${session.messege}"></th:block>
+  
+</div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label"></label>
+    <input name="otp" type="text" class="form-control" id="exampleInputEmail1"  placeholder="Enter otp here"aria-describedby="emailHelp">
+    
+  </div>
+  <div class="text-center"><button type="submit" class="btn btn-success">Verify</button></div>
+  </form>
+                                </div></div></div></div></div></div>
+</section>
+</body>
+</html>
