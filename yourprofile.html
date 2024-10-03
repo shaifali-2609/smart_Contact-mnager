@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base1::layout(~{::section})">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body><section>
+<div class="card card me-2 ms-2">
+<div class="card-body">
+<div class="container text-center"><img  style="width:200px;height:200px;" th:src="@{'/image/' + ${user.imageurl}}" class="mypic" />
+
+<h3 class="mt-3 text-center"><span  th:text="${user.name}"></span></h3>
+<div class="table-responsive">
+<table class="table"> 
+                    <thead>
+                        <tr >
+                           
+                            <th scope="col">Email</th>
+                            <td scope="col"><span th:text="${user.id}"></span></td>
+                            </tr>
+                             </thead>
+                    <tbody>
+                    <tr >
+                           
+                            <th scope="col">Active</th>
+                            <td scope="col"><span th:text="${user.enable}"></span></td>
+                            </tr>
+                            <tr >
+                           
+                            <th scope="col">Role</th>
+                            <td scope="col"><span th:text="${user.role}"></span></td>
+                            </tr>
+                        <tr>
+                         
+                          
+                            <th scope="col">About</th>
+                            <td scope="col"><span th:text="${user.about}"></span></td>
+                        </tr>
+                          
+ <tr>
+                            <th scope="col">Id</th>
+                            <td scope="col"><span th:text="${user.id}"></span></td>
+
+</tr>
+</tbody>
+</table></div><button type="button" class="btn btn-danger">Delete</button>
+
+<button type="button" class="btn btn-warning">Update</button>
+</div></div></div></section>
+<script>$(document).ready(()=>{
+   $('.item').removeClass('active');
+   $('#pro-link').addClass('active');
+   
+   
+   });</script>
+</body>
+</html>
